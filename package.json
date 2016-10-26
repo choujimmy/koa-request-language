@@ -1,0 +1,57 @@
+{
+  "name": "koa-request-language",
+  "version": "1.0.0",
+  "description": "A Koa middleware to figure out a request's language tag by parsing Accept-Language header and stored cookies.",
+  "main": "./lib/",
+  "jsnext:main": "./src/",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "lint": "eslint src",
+    "preversion": "npm run clean",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build",
+    "build": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/choujimmy/koa-request-language.git"
+  },
+  "keywords": [
+    "koa",
+    "language",
+    "intl",
+    "middleware",
+    "locale"
+  ],
+  "author": "Jimmy Chou <zliangyu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/choujimmy/koa-request-language/issues"
+  },
+  "homepage": "https://github.com/choujimmy/koa-request-language#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.0",
+    "babel-eslint": "^7.0.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.8.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "accept-language": "^3.0.15",
+    "bcp47": "^1.1.2"
+  },
+  "engines": {
+    "node": ">=5.0 <7",
+    "npm": ">=3.3 <4"
+  }
+}
