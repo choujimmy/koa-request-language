@@ -37,7 +37,8 @@ app.use(async ctx => {
 ```
 
 ### Usage with [L10ns](http://l10ns.org)
-Access all your localizations in `req.localizations`.
+Access all your localizations in `ctx.localizations`.
+
 ```javascript
 import requestLangauge from 'koa-request-language'
 import localizations from 'path/to/l10ns/output/all'
@@ -57,9 +58,9 @@ app.use(requestLanguage({
 
 app.use(async (ctx, next) => {
   // It will use localization from the right language.
-  var l = ctx.localizations;
-  console.log(l('HELLO_WORLD'));
-});
+  const l = ctx.localizations
+  console.log(l('HELLO_WORLD'))
+})
 ...
 ```
 
@@ -98,13 +99,13 @@ You can optionally set the language using a query string. This option allows you
 The selected language can be unset by setting the language parameter to `default`.
 
 ```js
-var middleware = requestLangauge({
+const middleware = requestLangauge({
   languages: ['en-US', 'zh-CN'],
   queryName: 'locale', // ?locale=zh-CN will set the language to 'zh-CN'
   cookie: {
     name: 'language'
   }
-});
+})
 ```
 
 #### localizations (optional) {Function}
@@ -112,8 +113,8 @@ Set the [L10ns][] `requireLocalizations(language)` function. The right language 
 
 ```javascript
 app.use(async (ctx, next) => {
-  const l = ctx.localizations;
-});
+  const l = ctx.localizations
+})
 ```
 ### Maintainer
 
