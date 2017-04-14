@@ -1,5 +1,7 @@
 # koa-request-language
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/choujimmy/koa-request-language.svg)](https://greenkeeper.io/)
+
 A [Koa2](http://koajs.com) middleware to figure out your request's language either by parsing `Accept-Language` header or by looking at a language cookie's value. `request-language` plays nicely with [L10ns][] by abstracting all your language setting logic for you.
 
 Port from [request-language](https://github.com/tinganho/express-request-language)
