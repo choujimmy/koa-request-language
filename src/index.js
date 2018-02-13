@@ -96,7 +96,7 @@ const requestLanguage = (props) => {
     }
 
     setProps(props, ctx, language)
-    next()
+    await next()
   }
 }
 
